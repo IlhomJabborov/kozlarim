@@ -1,13 +1,21 @@
 from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
+from fastapi.middleware.cors import CORSMiddleware
 import shutil
 import os
 from model import MyModel
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Initialize MyModel
-model = MyModel(model_name="my_model")
+model = MyModel(model_name=os.getenv("MODEL_NAME", "Salesforce/blip-image-captioning-base"))
 
 @app.post("/generate")
 async def generate_caption(image: UploadFile = File(...)):
