@@ -19,7 +19,7 @@ Telefonda:
 ## 2) Loyihani yuklab olish
 
 ```powershell
-git clone https://github.com/nosirbekdev/kozlarim.git
+git clone https://github.com/IlhomJabborov/kozlarim.git
 cd kozlarim
 ```
 
@@ -163,3 +163,4 @@ Shu uchalasi ishlasa, mobile app ham ishlaydi.
 
 ---
 Agar jamoa bilan ishlasangiz, har developer o'z lokal IP manziliga qarab `.env`dagi `EXPO_PUBLIC_API_BASE_URL`ni sozlashi tavsiya etiladi.
+
